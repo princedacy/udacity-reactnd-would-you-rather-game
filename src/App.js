@@ -1,19 +1,14 @@
+import Login from "./views/Login";
+import Navbar from './components/Navbar'
+import Home from './views/Home'
+import LeaderBoard from "./views/LeaderBoard";
+import NewQuestion from "./views/NewQuestion";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Login/>
     </div>
   );
 }
