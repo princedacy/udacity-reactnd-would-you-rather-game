@@ -7,18 +7,18 @@ class Login extends Component {
   };
   render() {
     return (
-      <div class="card">
-        <div class="card-body d-flex flex-column justify-content-center align-items-center">
-          <h5 class="card-title">Welcome to the Would You Rather App!</h5>
-          <p class="card-text">Please sign in to continue</p>
+      <div className="card col-md-4 mx-auto mt-5">
+        <div className="card-body d-flex flex-column justify-content-center align-items-center">
+          <h5 className="card-title">Welcome to the Would You Rather App!</h5>
+          <p className="card-text">Please sign in to continue</p>
           <img src={logo} alt="Logo" width="100px" />
-          <select class="form-select" aria-label="Default select example">
+          <select className="form-select" aria-label="Default select example">
             <option selected>Open this select menu</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-          <button type="button" class="btn btn-primary">
+          <button type="button" className="btn btn-primary">
             Sign in
           </button>
         </div>

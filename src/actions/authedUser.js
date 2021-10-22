@@ -1,4 +1,4 @@
-import { SET_AUTHED_USER, LOGOUT_USER_AUTHED_USER } from "./types";
+import { SET_AUTHED_USER, LOGOUT_AUTHED_USER } from "./types";
 
 export const setAuthedUser = (id) => {
     return {
@@ -9,6 +9,6 @@ export const setAuthedUser = (id) => {
 
 export const logoutAuthedUser = () => {
     return {
-        type: LOGOUT_USER_AUTHED_USER
+        type: LOGOUT_AUTHED_USER
     }
 }

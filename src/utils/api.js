@@ -4,7 +4,7 @@ import { _getUsers, _getQuestions, _saveQuestion, _saveQuestionAnswer } from "./
  * @description This function fetches users and questions 
  * @returns {users, questions}
  */
-export const fetchUsersandQuestions = () => {
+export const getApiData = () => {
     const [users, questions] = Promise.all([_getUsers, _getQuestions])
 
     return {
