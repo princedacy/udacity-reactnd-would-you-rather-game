@@ -1,10 +1,10 @@
-import { getApiData } from "../utils/api";
-import {fetchUsers} from './users'
-import {fetchQuestions} from './questions'
+import { getInitialData } from "../utils/api";
+import { fetchUsers } from './users'
+import { fetchQuestions } from './questions'
 
-export const handleApiData = () => {
+export function handleInitialData() {
     return (dispatch) => {
-        return getApiData().then(({users, questions}) => {
+        return getInitialData().then(({ users, questions }) => {
             dispatch(fetchUsers(users));
             dispatch(fetchQuestions(questions));
         })

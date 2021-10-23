@@ -1,13 +1,15 @@
-import { RECEIVE_USERS, ADD_ANSWER_TO_USER, ADD_QUESTION_TO_USER } from "./types"
+const RECEIVE_USERS = 'RECEIVE_USERS';
+const ADD_ANSWER_TO_USER = 'ADD_ANSWER_TO_USER';
+const ADD_QUESTION_TO_USER = 'ADD_QUESTION_TO_USER';
 
-export const fetchUsers = (users) => {
+export function fetchUsers(users) {
     return {
         type: RECEIVE_USERS,
         users
     }
 }
 
-export const assignAnswerToUser = ({ authedUser, questionId, answer }) => {
+export function assignAnswerToUser({ authedUser, questionId, answer }) {
     return {
         type: ADD_ANSWER_TO_USER,
         authedUser,
@@ -16,7 +18,7 @@ export const assignAnswerToUser = ({ authedUser, questionId, answer }) => {
     }
 }
 
-export const assignQuestionToUser = ({ authedUser, questionId }) => {
+export function assignQuestionToUser({ authedUser, questionId }) {
     return {
         type: ADD_QUESTION_TO_USER,
         authedUser,
