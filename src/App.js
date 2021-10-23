@@ -2,14 +2,14 @@ import React, {Component, Fragment} from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Login from "./views/Login";
-import Nav from './components/Nav'
+import Nav from './components/nav'
 import Home from './views/Home'
 import Question from './views/Question'
 import NewQuestion from "./views/NewQuestion";
 import LeaderBoard from "./views/LeaderBoard";
 import {handleInitialData} from './actions/shared';
 import {setAuthedUser} from './actions/authedUser'
-
+import ProtectedRoute from './components/protectedRoute';
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData());
