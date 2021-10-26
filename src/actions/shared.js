@@ -2,7 +2,7 @@ import { getInitialData } from "../utils/api";
 import { fetchUsers } from './users'
 import { fetchQuestions } from './questions'
 
-export function handleInitialData() {
+export const handleInitialData = () => {
     return (dispatch) => {
         return getInitialData().then(({ users, questions }) => {
             dispatch(fetchUsers(users));

@@ -2,11 +2,11 @@ import { _getUsers, _getQuestions, _saveQuestion, _saveQuestionAnswer } from "./
 
 /**
  * @description This function fetches users and questions 
- * @returns {users, questions}
+ * @returns returns users and questions
  */
-export const getInitialData = () => {
-    const [users, questions] = Promise.all([_getUsers, _getQuestions])
-
+export const getInitialData = async () => {
+    const [users, questions] = await Promise.all([_getUsers(), _getQuestions()])
+    
     return {
         users,
         questions

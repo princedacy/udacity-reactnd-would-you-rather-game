@@ -1,4 +1,4 @@
-import { SET_CALLBACK_LINK } from "../actions/callBackLink";
+import { SET_CALLBACK_LINK } from "../actions/types";
 
 export default function callBackLink(state = null, action) {
     switch (action.type) {

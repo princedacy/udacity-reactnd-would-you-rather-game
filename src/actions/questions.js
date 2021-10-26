@@ -1,27 +1,27 @@
 import { saveQuestion, saveQuestionAnswer } from '../utils/api'
 import { assignAnswerToUser, assignQuestionToUser } from './users'
+import {RECEIVE_QUESTIONS, ADD_QUESTION, ADD_QUESTION_ANSWER} from './types'
+// export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
+// export const ADD_QUESTION = 'ADD_QUESTION';
+// export const ADD_QUESTION_ANSWER = 'ADD_QUESTION_ANSWER';
 
-export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
-export const ADD_QUESTION = 'ADD_QUESTION';
-export const ADD_QUESTION_ANSWER = 'ADD_QUESTION_ANSWER';
-
-export function fetchQuestions(questions) {
+export const fetchQuestions = (questions) => {
     return {
         type: RECEIVE_QUESTIONS,
         questions
     }
 }
 
-function createPoll({ authedUser, questionId, answer }) {
+const createPoll = ({ authedUser, qid, answer }) => {
     return {
         type: ADD_QUESTION_ANSWER,
         authedUser,
-        questionId,
+        qid,
         answer
     }
 }
 
-export function handleVote(vote) {
+export const handleVote = (vote) => {
     return (dispatch) => {
         return saveQuestionAnswer(vote)
             .then(() => {
@@ -34,14 +34,14 @@ export function handleVote(vote) {
     }
 }
 
-function createQuestion(question) {
+const createQuestion = (question) => {
     return {
         type: ADD_QUESTION,
         question
     }
 }
 
-export function handleQuestion({ optionOneText, optionTwoText }) {
+export const handleQuestion = ({ optionOneText, optionTwoText }) => {
     return (dispatch, getState) => {
         const { authedUser } = getState();
         return saveQuestion({
@@ -51,8 +51,8 @@ export function handleQuestion({ optionOneText, optionTwoText }) {
         })
             .then((res) => {
                 dispatch(createQuestion(res));
-                const { author: authedUser, id: questionId } = res
-                dispatch(assignQuestionToUser({ authedUser, questionId }))
+                const { author: authedUser, id: qid } = res
+                dispatch(assignQuestionToUser({ authedUser, qid }))
             })
             .catch((e) => {
                 console.log('Something went wrong!')

@@ -5,8 +5,8 @@ import authedUser from "./authedUser";
 import link from './callBackLink';
 
 export default combineReducers({
-    authedUser,
     users,
     questions,
+    authedUser,
     link
 })
