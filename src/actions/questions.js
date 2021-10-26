@@ -1,9 +1,8 @@
 import { saveQuestion, saveQuestionAnswer } from '../utils/api'
 import { assignAnswerToUser, assignQuestionToUser } from './users'
-import {RECEIVE_QUESTIONS, ADD_QUESTION, ADD_QUESTION_ANSWER} from './types'
-// export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
-// export const ADD_QUESTION = 'ADD_QUESTION';
-// export const ADD_QUESTION_ANSWER = 'ADD_QUESTION_ANSWER';
+export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
+export const ADD_QUESTION = 'ADD_QUESTION';
+export const ADD_QUESTION_ANSWER = 'ADD_QUESTION_ANSWER';
 
 export const fetchQuestions = (questions) => {
     return {

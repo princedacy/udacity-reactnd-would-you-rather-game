@@ -10,6 +10,8 @@ import LeaderBoard from "./views/LeaderBoard";
 import { handleInitialData } from './actions/shared';
 import { setAuthedUser } from './actions/authedUser'
 import ProtectedRoute from './components/protectedRoute';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData());
