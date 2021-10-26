@@ -33,12 +33,12 @@ class Login extends Component {
           <p className="card-text">Please sign in to continue</p>
           <img src={logo} alt="Logo" width="100px" />
           <select className="form-select" aria-label="Default select example" onChange={this.handleChange}>
-            <option defaultValue>Select user to login</option>
+            <option defaultValue='Select user to login'>Select user to login</option>
             {usersList.map((user) => (
               <option value={user} key={user}>{user}</option>
             ))}
           </select>
-          <button type="button" className="btn btn-primary" disabled={user === ''}>
+          <button type="button" className="btn btn-primary" disabled={user === ''} onClick={this.handleSubmit}>
             Sign in
           </button>
         </div>
