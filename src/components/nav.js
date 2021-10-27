@@ -5,8 +5,8 @@ import { logoutAuthedUser } from '../actions/authedUser'
 import { Button, Avatar, Image } from "antd";
 class Nav extends Component {
     logout = () => {
-        localStorage.removeItem('user');
-        this.props.dispatch(logoutAuthedUser)
+        localStorage.removeItem('authedUser');
+        this.props.dispatch(logoutAuthedUser())
         this.props.history.push('/login')
     }
     login = () => {

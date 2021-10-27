@@ -16,7 +16,7 @@ class Login extends Component {
     e.preventDefault();
     const { user } = this.state;
     this.props.dispatch(setAuthedUser(user));
-    localStorage.setItem('user', user);
+    localStorage.setItem('authedUser', user);
     return this.props.history.push(this.props.link || '/');
   };
   render() {

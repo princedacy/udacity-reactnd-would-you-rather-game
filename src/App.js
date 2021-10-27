@@ -17,7 +17,7 @@ class App extends Component {
     this.props.dispatch(handleInitialData());
   }
   render() {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem('authedUser');
     if (user) {
       this.props.dispatch(setAuthedUser(user))
     }

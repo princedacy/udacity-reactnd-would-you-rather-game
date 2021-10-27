@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Card, Row, Col, Avatar, Image } from "antd";
 function LeaderCard(props) {
-    const { user, answersCounter, questionsCounter, index } = props
+    const { user, answersCounter, questionsCounter } = props
 
     return (
         <Card className='mb-4'>
@@ -11,7 +11,7 @@ function LeaderCard(props) {
                     <span className='font-weight-bolder'>{user.name}</span>
                     <Avatar src={<Image src={user.avatarURL} style={{ width: 100 }} />} style={{ width: 100, height: 100 }} />
                 </Col>
-                
+
                 <hr style={{ height: `80px`, background: `#ededed`, width: `1px` }} />
                 <Col xs={{ span: 6, offset: 1 }} lg={{ span: 12, offset: 2 }} className='d-flex flex-column justify-content-center'>
                     <h6 className='font-weight-bolder text-center'></h6>
@@ -21,6 +21,7 @@ function LeaderCard(props) {
                     <p className='font-weight-normal text-center'>
                         Created {questionsCounter} questions
                     </p>
+
                 </Col>
             </Row>
         </Card>

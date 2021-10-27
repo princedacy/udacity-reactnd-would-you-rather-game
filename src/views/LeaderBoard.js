@@ -3,12 +3,11 @@ import { connect } from "react-redux";
 import LeaderCard from '../components/leaderCard'
 function LeaderBoard(props) {
     const { usersCounter } = props
-    let a = 1;
     return (
         <div className='container'>
             <div className='col-md-7 mx-auto mt-5'>
                 {usersCounter.map((user) => (
-                    <LeaderCard key={user} id={user} index={a++}/>
+                    <LeaderCard key={user} id={user} />
                 ))}
             </div>
         </div>
