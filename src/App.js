@@ -10,6 +10,7 @@ import LeaderBoard from "./views/LeaderBoard";
 import { handleInitialData } from './actions/shared';
 import { setAuthedUser } from './actions/authedUser'
 import ProtectedRoute from './components/protectedRoute';
+import Notfound from './components/notFound';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 class App extends Component {
@@ -30,7 +31,8 @@ class App extends Component {
             <Route path='/login' component={Login} />
             <ProtectedRoute path='/questions/:question_id' component={Question} />
             <ProtectedRoute path='/leaderboard' component={LeaderBoard} />
-            <ProtectedRoute path='/add' component={NewQuestion} />
+            <ProtectedRoute path='/add' component={NewQuestion} exact />
+            <Route component={Notfound} />
           </Switch>
         </Fragment>
       </Router>

@@ -19,7 +19,6 @@ class Question extends Component {
     }
     render() {
         const { isOptionOne, question, pollAnswered } = this.props
-        const { answer } = this.state;
         const optionOneVotes = question && question.optionOne.votes.length
         const optionTwoVotes = question && question.optionTwo.votes.length
         const totalVotes = question && optionOneVotes + optionTwoVotes
