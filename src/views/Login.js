@@ -47,7 +47,7 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ users, authedUser, link }) => {
+function mapStateToProps({ users, authedUser, link }) {
   return {
     usersList: Object.keys(users).map((user) => {
       return user;

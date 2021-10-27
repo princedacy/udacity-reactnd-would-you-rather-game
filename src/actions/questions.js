@@ -4,14 +4,14 @@ export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const ADD_QUESTION = 'ADD_QUESTION';
 export const ADD_QUESTION_ANSWER = 'ADD_QUESTION_ANSWER';
 
-export const fetchQuestions = (questions) => {
+export function fetchQuestions (questions) {
     return {
         type: RECEIVE_QUESTIONS,
         questions
     }
 }
 
-const createPoll = ({ authedUser, qid, answer }) => {
+function createPoll ({ authedUser, qid, answer }) {
     return {
         type: ADD_QUESTION_ANSWER,
         authedUser,
@@ -20,7 +20,7 @@ const createPoll = ({ authedUser, qid, answer }) => {
     }
 }
 
-export const handleVote = (vote) => {
+export function handleVote (vote) {
     return (dispatch) => {
         return saveQuestionAnswer(vote)
             .then(() => {
@@ -33,14 +33,14 @@ export const handleVote = (vote) => {
     }
 }
 
-const createQuestion = (question) => {
+function createQuestion (question) {
     return {
         type: ADD_QUESTION,
         question
     }
 }
 
-export const handleQuestion = ({ optionOneText, optionTwoText }) => {
+export function handleQuestion ({ optionOneText, optionTwoText }) {
     return (dispatch, getState) => {
         const { authedUser } = getState();
         return saveQuestion({

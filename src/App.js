@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Login from "./views/Login";
 import Nav from './components/nav'
 import Home from './views/Home'
-import Question from './views/Question'
+import Question from './components/question'
 import NewQuestion from "./views/NewQuestion";
 import LeaderBoard from "./views/LeaderBoard";
 import { handleInitialData } from './actions/shared';

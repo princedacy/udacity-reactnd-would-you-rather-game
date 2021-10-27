@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Route, Redirect, withRouter } from 'react-router-dom'
 import { setCallbackLink } from '../actions/callBackLink';
 
-const ProtectedRoute = ({ isAuth, path, component, dispatch, ...rest }) => {
+function ProtectedRoute ({ isAuth, path, component, dispatch, ...rest }) {
     const oldPath = window.location.pathname;
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const ProtectedRoute = ({ isAuth, path, component, dispatch, ...rest }) => {
 
 ProtectedRoute.propTypes = {
     path: PropTypes.string.isRequired,
-    component: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+    component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired
 }
 
 function mapStateToProps({ authedUser }) {

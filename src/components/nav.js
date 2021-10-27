@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
-class Navbar extends Component {
+class Nav extends Component {
+    
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,4 +30,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default Nav

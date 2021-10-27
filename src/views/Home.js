@@ -24,7 +24,7 @@ class Home extends Component {
     }
 }
 
-const mapStateToProps = ({ questions, users, authedUser }) => {
+function mapStateToProps ({ questions, users, authedUser }) {
     const user = users[authedUser];
     return {
         answered: user ? Object.keys(questions)
