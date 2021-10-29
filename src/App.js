@@ -31,8 +31,8 @@ class App extends Component {
             <Route path='/login' component={Login} />
             <ProtectedRoute path='/questions/:question_id' component={Question} />
             <ProtectedRoute path='/leaderboard' component={LeaderBoard} />
-            <ProtectedRoute path='/add' component={NewQuestion} exact />
-            <Route component={Notfound} />
+            <ProtectedRoute path='/add' component={NewQuestion} />
+            <Route path='/404' component={Notfound} />
           </Switch>
         </Fragment>
       </Router>
