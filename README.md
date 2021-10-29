@@ -12,6 +12,6 @@ Simple React and Redux game app that lets a user login in with predefined users,
 
 ## How To Run The App
 
-- `git clone` the project's repo
-- `npm install` or `yarn` to install required packages in the `package.json` file
-- `npm start` or `yarn start` to run the app in the development mode. it is sourced at [http://localhost:3000](http://localhost:3000)
+- Clone or download the project `git clone` 
+- Run `npm install` or `yarn` to install required packages in the `package.json` file
+- Run `npm start` or `yarn start` to run the app in the development mode. it is sourced at [http://localhost:3000](http://localhost:3000)
