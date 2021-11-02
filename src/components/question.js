@@ -3,6 +3,7 @@ import { Card, Row, Col, Avatar, Image, Progress, Radio, Space, Badge, Button } 
 import { formatPoll } from '../utils/helpers'
 import { connect } from 'react-redux'
 import { handleVote } from '../actions/questions'
+import { Redirect } from 'react-router'
 class Question extends Component {
     state = {
         answer: ''
@@ -19,13 +20,14 @@ class Question extends Component {
     }
     render() {
         const { isOptionOne, question, pollAnswered } = this.props
-        const { answer } = this.state;
         const optionOneVotes = question && question.optionOne.votes.length
         const optionTwoVotes = question && question.optionTwo.votes.length
         const totalVotes = question && optionOneVotes + optionTwoVotes
         const optionOnePercent = question && Math.round((optionOneVotes * 100) / totalVotes);
         const optionTwoPercent = question && Math.round((optionTwoVotes * 100) / totalVotes)
-
+        if (!question) {
+            return <Redirect to='/404' />;
+        }
         return pollAnswered ? (
             <div className='container'>
                 <div className='col-md-7 mx-auto mt-5'>

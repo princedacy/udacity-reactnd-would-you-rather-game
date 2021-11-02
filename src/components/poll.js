@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Card, Avatar, Image, Row, Col, Button } from 'antd'
+import { Card, Avatar, Image, Row, Col } from 'antd'
 import { formatPoll } from '../utils/helpers'
 import { Link } from 'react-router-dom';
 
